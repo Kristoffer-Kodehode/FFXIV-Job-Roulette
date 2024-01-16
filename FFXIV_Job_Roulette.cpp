@@ -26,8 +26,6 @@ int main() {
     
 
     if (role == "any") {
-        /*int random_index = roll(all_jobs);
-        std::cout << all_jobs[random_index] << "\n";//random_job;*/
         roll_all();
     } else if (role == "tank") {
         roll_tanks();
@@ -45,11 +43,7 @@ int main() {
         std::cout << "Invalid input.\n";
     }
 
-    //std::string random_job = all_jobs[random_index];
-
-    char exit;
-    std::cout << "Enter any character to exit: ";
-    std::cin >> exit;
+    
 
     return 0;
 }
@@ -166,16 +160,6 @@ void roll_magic() {
     }
 }
 
-/*void reroll(void rollfunc) { attempt at a reroll function
-    std::cout << "Reroll? (y/n) ";
-    std::cin >> reroll;
-    if (reroll == 'y') {
-        rollfunc;
-    } else {
-        return;
-    }
-}/*/
-
 int roll(std::vector<std::string> type) {
     srand(time(NULL));
 
@@ -184,3 +168,20 @@ int roll(std::vector<std::string> type) {
 
     return random;
 }
+
+/*void reroll(void rollfunc) { attempt at a reroll function
+    std::cout << "Reroll? (y/n) ";
+    std::cin >> reroll;
+    if (reroll == 'y') {
+        rollfunc;
+    } else {
+        return;
+    }
+}/
+
+void exit() {
+    char exit;
+    std::cout << "Enter any character to exit: ";
+    std::cin >> exit;
+    return;
+}*/
