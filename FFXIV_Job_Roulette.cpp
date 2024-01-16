@@ -20,7 +20,7 @@ int main() {
     std::cout << "What role do you want to play? (any, tank, healer, dps, melee, ranged, magic) ";
     std::cin >> role;
 
-    //make role inut all lowercase for easier use in if-block
+    //make role input all lowercase for easier use in if-block
     for (int i = 0; i < role.size(); i++) {
         role[i] = tolower(role[i]);
     }
@@ -43,8 +43,6 @@ int main() {
     } else {
         std::cout << "Invalid input.\n";
     }
-
-    
 
     return 0;
 }
