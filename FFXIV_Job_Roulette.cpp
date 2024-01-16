@@ -19,12 +19,12 @@ int main() {
     std::cout << "What role do you want to play? (any, tank, healer, dps, melee, ranged, magic) ";
     std::cin >> role;
 
-    //make inut all lowercase for easier use in if-block
+    //make role inut all lowercase for easier use in if-block
     for (int i = 0; i < role.size(); i++) {
         role[i] = tolower(role[i]);
     }
     
-
+    //choose roll function based on input, want to refactor if possible
     if (role == "any") {
         roll_all();
     } else if (role == "tank") {
@@ -48,12 +48,15 @@ int main() {
     return 0;
 }
 
+//all roll functions, again, want to refactor if possible
 void roll_all() {
     char reroll;
 
+    //get a pseudo-random number based on length of chosen array, then print out the pseudo-randomly selected job by index
     int random_index = roll(all_jobs);
     std::cout << all_jobs[random_index] << "\n";
 
+    //prompt user for reroll, re-run roll function until satisfied, any other character than y will exit the loop and go to the end of the program and return 0
     std::cout << "Reroll? (y/n) ";
     std::cin >> reroll;
 
