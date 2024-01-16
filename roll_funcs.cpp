@@ -2,53 +2,6 @@
 #include <vector>
 #include "job_arrays.hpp"
 
-int roll(std::vector<std::string> type);
-
-void roll_all();
-void roll_tanks();
-void roll_healers();
-void roll_dps();
-void roll_melee();
-void roll_ranged();
-void roll_magic();
-
-
-int main() {
-    //setup input for role choice
-    std::string role;
-
-    std::cout << "What role do you want to play? (any, tank, healer, dps, melee, ranged, magic) ";
-    std::cin >> role;
-
-    //make role inut all lowercase for easier use in if-block
-    for (int i = 0; i < role.size(); i++) {
-        role[i] = tolower(role[i]);
-    }
-    
-    //choose roll function based on input, want to refactor if possible
-    if (role == "any") {
-        roll_all();
-    } else if (role == "tank") {
-        roll_tanks();
-    } else if (role == "healer") {
-        roll_healers();
-    } else if (role == "dps") {
-        roll_dps();
-    } else if (role == "melee") {
-        roll_melee();
-    } else if (role == "ranged") {
-        roll_ranged();
-    } else if (role == "magic") {
-        roll_magic();
-    } else {
-        std::cout << "Invalid input.\n";
-    }
-
-    
-
-    return 0;
-}
-
 //all roll functions, again, want to refactor if possible
 void roll_all() {
     char reroll;
@@ -164,18 +117,21 @@ void roll_magic() {
     }
 }
 
-int roll(std::vector<std::string> role) {
+int roll(std::vector<std::string> type) {
     srand(time(NULL));
 
-    int random = rand() % role.size();
+    int random = rand() % type.size();
     std::cout << random << "\n";
 
     return random;
 }
 
-/*void exit() {
-    char exit;
-    std::cout << "Enter any character to exit: ";
-    std::cin >> exit;
-    return;
+/*void reroll(void rollfunc) { attempt at a reroll function
+    std::cout << "Reroll? (y/n) ";
+    std::cin >> reroll;
+    if (reroll == 'y') {
+        rollfunc;
+    } else {
+        return;
+    }
 }*/
