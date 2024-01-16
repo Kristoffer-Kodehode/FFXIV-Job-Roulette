@@ -1,0 +1,2 @@
+std::vector<std::string> all_jobs = {"Paladin", "Warrior", "Dark Knight", "Gunbreaker", "White Mage", "Scholar", "Astrologian", "Sage", "Dragoon", "Monk", "Ninja", "Samurai", "Reaper", "Bard", "Machinist", "Dancer", "Summoner", "Black Mage", "Red Mage"};
+//std::string all_jobs[] = {"Paladin", "Warrior", "Dark Knight", "Gunbreaker", "White Mage", "Scholar", "Astrologian", "Sage", "Dragoon", "Monk", "Ninja", "Samurai", "Reaper", "Bard", "Machinist", "Dancer", "Summoner", "Black Mage", "Red Mage"};
