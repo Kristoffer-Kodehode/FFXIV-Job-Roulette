@@ -6,13 +6,23 @@ int roll(std::vector<std::string> type);
 
 int main() {
 
+    std::string role;
 
+    std::cout << "What role do you want to play? (any, tank, healer, dps, melee, ranged, magic)";
+    std::cin >> role;
 
-    int random_index = roll(all_jobs);
+    //make inut all lowercase for easier use in if-block
+    for (int i = 0; i < role.size(); i++) {
+        role[i] = tolower(role[i]);
+    }
+    
+
+    if (role == "any") {
+        int random_index = roll(all_jobs);
+        std::cout << all_jobs[random_index] << "\n";//random_job;
+    }
 
     //std::string random_job = all_jobs[random_index];
-
-    std::cout << all_jobs[random_index] << "\n";//random_job;
 
     char exit;
     std::cout << "Enter any character to exit: ";
