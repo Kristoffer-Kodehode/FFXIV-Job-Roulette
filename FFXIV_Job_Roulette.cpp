@@ -3,12 +3,13 @@
 #include "job_arrays.hpp"
 
 int roll(std::vector<std::string> type);
+void roll_all();
 
 int main() {
-
+    //setup input for role choice
     std::string role;
 
-    std::cout << "What role do you want to play? (any, tank, healer, dps, melee, ranged, magic)";
+    std::cout << "What role do you want to play? (any, tank, healer, dps, melee, ranged, magic) ";
     std::cin >> role;
 
     //make inut all lowercase for easier use in if-block
@@ -18,8 +19,11 @@ int main() {
     
 
     if (role == "any") {
-        int random_index = roll(all_jobs);
-        std::cout << all_jobs[random_index] << "\n";//random_job;
+        /*int random_index = roll(all_jobs);
+        std::cout << all_jobs[random_index] << "\n";//random_job;*/
+        roll_all();
+    } else {
+        std::cout << "Invalid input.\n";
     }
 
     //std::string random_job = all_jobs[random_index];
@@ -31,9 +35,10 @@ int main() {
     return 0;
 }
 
-/*std::string roll_all() {
-
-}*/
+void roll_all() {
+    int random_index = roll(all_jobs);
+    std::cout << all_jobs[random_index] << "\n";
+}
 
 int roll(std::vector<std::string> type) {
     srand(time(NULL));
